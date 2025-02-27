@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eBay計算</title>
-    
+
     <style>
-    
+
     /* 販売プラットフォームの選択スタイル */
     select#platform {
     width: 100%;
@@ -17,7 +17,7 @@
     border-radius: 4px;
     background-color: #fffaf0;
     color: #db7093;
-    }   
+    }
 
     /* 計算結果の表示エリア */
     #resultText {
@@ -140,7 +140,7 @@
 
     </style>
 </head>
-    
+
 <body>
     <div class="container">
         <h1></h1>
@@ -231,6 +231,8 @@
 <!-- ここに計算結果が表示されます -->
 <textarea id="resultText" readonly rows="7"></textarea>
 <button onclick="copyToClipboard()">コピー</button>
+
+<textarea id="copyText" readonly style="background-color: #fffaf0; border: 1px solid #ffc0cb; color: #db7093;">
 仕入れシミュレーション（メモアプリに保存）
 
 ① 商品タイトル
@@ -241,36 +243,6 @@ URLを最初にまとめておくことで、後で見返す時にすぐに検�
 ▼完売、新着順
 		
 ▼販売中、最新順
-
-③ 計算結果のコピペ
-利益額を先に確認することで、仕入れるかどうかの判断がしやすくなる。
-
-④ 仕入れる種類・個数
-利益を確認した後に、どのバリエーションをいくつ仕入れるかを決定。
-
-⑤ メモ
-競合状況や価格変動の理由、季節性などの気づきをメモ。判断根拠を明確にする。
-
-⑥ 仕入れ先ページURL
-最後に実際の仕入れを行うページにすぐ飛べるように。
-<textarea id="copyText" readonly style="background-color: #fffaf0; border: 1px solid #ffc0cb; color: #db7093;">
-
-</textarea>
-<button onclick="copyToClipboard('copyText')">コピー</button><!-- ここに計算結果が表示されます -->
-<textarea id="resultText" readonly rows="7"></textarea>
-<button onclick="copyToClipboard()">コピー</button>
-
-<textarea id="copyText" readonly style="background-color: #fffaf0; border: 1px solid #ffc0cb; color: #db7093;">
-仕入れシミュレーション
-
-① 商品タイトル
-最初に商品が何かを明確にしておくことで、後の情報が整理されやすくなります。
-
-② 検索全体画面URL
-URLを最初にまとめておくことで、後で見返す時にすぐに検索ページに戻れるように。
-•▼売り切れ、新しい順
-	
-•▼販売中、新しい順
 
 ③ 計算結果のコピペ
 利益額を先に確認することで、仕入れるかどうかの判断がしやすくなる。
@@ -330,14 +302,14 @@ URLを最初にまとめておくことで、後で見返す時にすぐに検�
 
 </body>
     <script>
-       
+
     async function calculateProfit() {
     console.log("calculateProfit() 関数が呼び出されました"); // ✅ 呼び出し確認
 
     // costPriceCurrency の定義 (null エラー回避)
     const costPriceCurrencyElement = document.querySelector('input[name="costPriceCurrency"]:checked');
-    const costPriceCurrency = costPriceCurrencyElement 
-        ? costPriceCurrencyElement.value 
+    const costPriceCurrency = costPriceCurrencyElement
+        ? costPriceCurrencyElement.value
         : "JPY"; // デフォルト値を JPY に設定
     console.log("仕入れ値の通貨 (costPriceCurrency):", costPriceCurrency); // ✅ 確認用
 
@@ -514,7 +486,7 @@ const platformShipping = {
         } catch (error) {
         console.error("為替レートの取得に失敗しました", error);
         alert("為替レートの取得に失敗しました。手動で入力してください。");
-        } 
+        }
 }
 
 // 更新ボタンで手動更新
@@ -573,8 +545,8 @@ document.querySelectorAll('input[name="customsDuty"]').forEach((radio) => {
     console.log("送料 (shippingCostJPY):", shippingCostJPY);
 
     // shippingCostHandInput と shippingCostSelect の取得
-    const shippingCostHandInput = document.getElementById('shippingCostHand'); 
-    const shippingCostSelect = document.getElementById('shippingCost'); 
+    const shippingCostHandInput = document.getElementById('shippingCostHand');
+    const shippingCostSelect = document.getElementById('shippingCost');
 
     // 初期状態では非表示
     shippingCostHandInput.style.display = 'none';
@@ -588,7 +560,7 @@ document.querySelectorAll('input[name="customsDuty"]').forEach((radio) => {
         shippingCostHandInput.style.display = 'none';
         shippingCostHandInput.required = false; // 手入力を解除
     }
-    });　
+    });
 });
 
 </script>
