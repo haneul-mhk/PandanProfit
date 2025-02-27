@@ -231,24 +231,29 @@
 <!-- ここに計算結果が表示されます -->
 <textarea id="resultText" readonly rows="7"></textarea>
 <button onclick="copyToClipboard()">コピー</button>
+仕入れシミュレーション
 
+① 商品タイトル
+最初に商品が何かを明確にしておくことで、後の情報が整理されやすくなります。
+
+② 検索全体画面URL
+URLを最初にまとめておくことで、後で見返す時にすぐに検索ページに戻れるように。
+	•	▼売り切れ、新しい順
+	•	▼販売中、新しい順
+
+③ 計算結果のコピペ
+利益額を先に確認することで、仕入れるかどうかの判断がしやすくなる。
+
+④ 仕入れる種類・個数
+利益を確認した後に、どのバリエーションをいくつ仕入れるかを決定。
+
+⑤ メモ
+競合状況や価格変動の理由、季節性などの気づきをメモ。判断根拠を明確にする。
+
+⑥ 仕入れ先ページURL
+最後に実際の仕入れを行うページにすぐ飛べるように。
 <textarea id="copyText" readonly style="background-color: #fffaf0; border: 1px solid #ffc0cb; color: #db7093;">
-仕入れ判断
 
-①商品タイトル
-
-②（計算結果コピペ）
-
-③仕入れる種類・個数
-
-④メモ
-
-⑤-1検索全体画面URL
-▼売り切れ、新しい順
-
-▼販売中、新しい順
-
-⑥仕入れ先ページURL
 </textarea>
 <button onclick="copyToClipboard('copyText')">コピー</button>
 
