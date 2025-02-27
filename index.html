@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eBay計算</title>
+    
     <style>
     
     /* 販売プラットフォームの選択スタイル */
@@ -18,44 +19,43 @@
     color: #db7093;
     }   
 
-                /* 計算結果の表示エリア */
-                #resultText {
-                background-color: #fffaf0;
-                border: 1px solid #ffc0cb;
-                color: #db7093;
-                font-family: monospace;
-                white-space: pre-wrap;
-                text-align: left;
-                height: 200px; /* 高さを固定 */
-                overflow-y: scroll; /* スクロール可能に */
-            　　}
+    /* 計算結果の表示エリア */
+    #resultText {
+    background-color: #fffaf0;
+    border: 1px solid #ffc0cb;
+    color: #db7093;
+    font-family: monospace;
+    white-space: pre-wrap;
+    text-align: left;
+    height: 200px; /* 高さを固定 */
+    overflow-y: scroll; /* スクロール可能に */
+    }
 
-            .input-table {
-                              width: 100%;
-                              display: grid;
-                              grid-template-columns: 1fr 1fr; /* 2列 */
-                              gap: 10px;
-                          }
+    .input-table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列 */
+    gap: 10px;
+    }
 
-                          .input-table div {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                            }
+    .input-table div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
 
-
-    　@media (max-width: 768px) {
-    　　table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-   　　 }
-    　　th, td {
-        display: inline-block;
-        width: 45%; /* 2列のレイアウトを維持 */
-    　　}
-　　　　}
+    @media (max-width: 768px) {
+    table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    }
+    th, td {
+    display: inline-block;
+    width: 45%; /* 2列のレイアウトを維持 */
+    }
+　　}
 
 
         body {
@@ -120,6 +120,23 @@
             font-weight: bold;
             color: #b22222;
         }
+
+      /* ボタンより上の部分だけ文字を小さく */
+      .container form {
+      font-size: 0.9em;
+      }
+
+      /* 入力欄とセレクトボックスの文字をさらに小さく */
+      .container form input[type="number"],
+      .container form select,
+      .container form label {
+          font-size: 0.85em;
+      }
+
+      /* ボタンより下の部分は影響を受けない */
+      .container form + table {
+          font-size: 1em;
+      }
 
     </style>
 </head>
